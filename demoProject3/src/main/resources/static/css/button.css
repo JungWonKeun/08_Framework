@@ -1,0 +1,292 @@
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  margin-top: 12vh;
+}
+
+.footer {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 15vh;
+}
+
+/* Button 1 Styles */
+.button1-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 6vh auto;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.button1 {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  -webkit-mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png');
+  mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png');
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+}
+
+.button1:hover {
+  animation: ani1 0.1s steps(22) forwards;
+}
+
+@keyframes ani1 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+/* Button 2 Styles */
+.button2-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 6vh auto;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.button2 {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  -webkit-mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png');
+  mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png');
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+}
+
+.button2:hover {
+  animation: ani2 0.1s steps(29) forwards;
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+/* Button 3 Styles */
+.button3-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 6vh auto;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.button3 {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  -webkit-mask: url('https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png');
+  mask: url('https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png');
+  -webkit-mask-size: 7100% 100%;
+  mask-size: 7100% 100%;
+}
+
+.button3:hover {
+  animation: ani3 0.1s steps(70) forwards;
+}
+
+@keyframes ani3 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+/* Button 4 Styles */
+.button4-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 6vh auto;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.button4 {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  -webkit-mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png'); /* Example URL */
+  mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png'); /* Example URL */
+  -webkit-mask-size: 4000% 100%;
+  mask-size: 4000% 100%;
+}
+
+.button4:hover {
+  animation: ani4 0.1s steps(40) forwards;
+}
+
+@keyframes ani4 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+/* Button 5 Styles */
+.button5-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 6vh auto;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.button5 {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  -webkit-mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png'); /* Example URL */
+  mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png'); /* Example URL */
+  -webkit-mask-size: 5000% 100%;
+  mask-size: 5000% 100%;
+}
+
+.button5:hover {
+  animation: ani5 0.1s steps(50) forwards;
+}
+
+@keyframes ani5 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+a {
+  color: #00ff95;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 4px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  padding: 1em 1.5em;
+  font-size: 1em;
+  font-weight: 400;
+  font-family: "Helvetica", "Arial", sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
