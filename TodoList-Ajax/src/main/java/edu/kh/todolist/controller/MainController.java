@@ -19,7 +19,7 @@ public class MainController {
 	private TodoListService service;
 	
 	/** 메인 페이지
-	 * @param model 대이터 전달용 객체(request scope)
+	 * @param model 데이터 전달용 객체(request scope)
 	 * @return
 	 */
 	@RequestMapping("/") // 최상위 주소 매핑(GET, POST 가리지 않음)
@@ -31,7 +31,7 @@ public class MainController {
 		List<Todo> todoList = (List<Todo>)map.get("todoList");
 		int completeCount = (int)map.get("completeCount");
 		
-		// 조회 결과 request scope
+		// 조회 결과 request scope에 추가
 		model.addAttribute("todoList", todoList);
 		model.addAttribute("completeCount", completeCount);
 		
