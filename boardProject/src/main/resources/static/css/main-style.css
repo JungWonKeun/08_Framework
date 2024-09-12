@@ -79,7 +79,7 @@ header > section:nth-child(2){
 
 /* 검색창 테두리 */
 .search-area fieldset{
-  border: 4px solid black;
+  border-width:0 0 4px;
   padding: 2px; 
   border-radius: 5px;
   display: flex;
@@ -184,9 +184,10 @@ nav a:hover{
 
 /* id/pw 입력 영역 */
 .id-pw-area{
-  border: 1px solid #ccc;
+  border: 3px solid black;
   display: flex;
   flex-basis: 60%; /* 중심축(세로) 방향 60% (== height:60%) */
+  border-radius: 95;
 }
 
 
@@ -202,13 +203,13 @@ nav a:hover{
   outline: none;
   height: 50%;
   padding: 5px;
-  border-right: 1px solid #ccc;
+  border-right: 3px solid black;
 }
 
 
 input[name="memberEmail"]{
   /* id/pw 사이 선 */
-  border-bottom : 1px solid #ccc !important;
+  border-bottom : 3px solid black !important;
 }
 
 /* id/pw input태그에 초점이 맞춰졌을 때 */
@@ -441,6 +442,11 @@ label[for="headerMenuToggle"]:hover{
   background-color: grey;
 }
 
+.content{
+  background-image: url('../images/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .content-1 hr{
   margin: 20px 0;
@@ -461,6 +467,8 @@ a span {
   padding: 15px;
   transition: .5s;
   position: relative;
+  top: 50px;
+  right: 30px;
 }
 a span:nth-child(1) {
   color: #fff;
@@ -522,7 +530,9 @@ a span:nth-child(2):after {
   transition: 0.5S;
   transform-origin: top;
   transform: rotateX(0deg) translateY(0%);
+  
 }
 a:hover span:nth-child(2):after {
   transform: rotateX(90deg) translateY(-50%);
 } 
+
