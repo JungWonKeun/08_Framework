@@ -6,15 +6,15 @@
   -->
 <mapper namespace="edu.kh.project.member.mapper.MemberMapper">
   
-  <!-- [TIP]
+  <!--  [TIP]
   	parameterType 속성은 필수가 아니다!!!
-  	-> Mybatis 의 TypeHandler가 파라미터의 타입을 알아서 판별할 수 있다!
+  	-> Mybatis TypeHandler가 파라미터의 타입을 알아서 판별할 수 있다!
   	
-  	** parameterType 잘 쓰던가, 아예 쓰지 말던가!
+  	** parameterType 잘 쓰던가!, 쓰지 말던가!
   	
   	단, <select> 태그에서 resultType은 필수!!!!
   	
-  	(<insert>, <update>, <delete>는 resultType 작성 불가 (무조건 int 고정이여서))
+  	(<insert>, <update>, <delete>는 resultType 작성 불가)
    -->
   
   <!-- 로그인 -->
@@ -36,6 +36,7 @@
 	AND   MEMBER_DEL_FL = 'N'
   </select>
   <!-- MEMBER_DEL_FL = 'N' -> 탈퇴하지 않은 회원 == 정상 회원 -->
+  
   
   
   

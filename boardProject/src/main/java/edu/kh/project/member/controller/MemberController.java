@@ -40,7 +40,7 @@ public class MemberController {
 	public String login(
 		@RequestParam("memberEmail") String memberEmail,
 		@RequestParam("memberPw") String memberPw,
-		@RequestParam(name = "saveEmail", required = false) String saveEmail,
+		@RequestParam(name="saveEmail", required = false) String saveEmail,
 		RedirectAttributes ra,
 		Model model,
 		HttpServletResponse resp
@@ -55,43 +55,43 @@ public class MemberController {
 		
 		if(loginMember == null) { // 로그인 실패
 			ra.addFlashAttribute("message", "이메일 또는 비밀번호가 일치하지 않습니다");
-		
-		} 
+	
+		}
 		
 		else { // 로그인 성공
-		
+			
 			// loginMember를 session scope에 추가
 			// 방법 1) HttpSession 이용
-			// 방법 2) @SessionAttributes + Model 이용 방법
+			// 방법 2) @SessionAttirbutes + Model 이용 방법
 			
 			/* Model을 이용해서 Session scope에 값 추가하는 방법 */
-			// 1. model에 값 추가
+			// 1. model에 값 추가 (request)
 			model.addAttribute("loginMember", loginMember);
 			
 			// 2. 클래스 선언부 위에 @SessionAttributes({"key"}) 추가
-			// 	  -> key 값은 model에 추가된 key값 "loginMember" 작성
-			// 		 	 (request -> session)
+			// -> key 값은 model에 추가된 key 값 "loginMember" 작성
+			// (request -> session)
 			
 			// @SessionAttributes : 
 			// Model 추가된 값 중 session scope로 올리고 싶은 값의
 			// key를 작성하는 어노테이션
-
+			
 			// --------------------------------------------------
 			/* 이메일 저장 코드(Cookie) */
 			
-			// 1. Cookie 객체 생성 (K:V)
+			// 1. Cookie 객체 생성(K:V)
 			Cookie cookie = new Cookie("saveEmail", memberEmail);
 			
-			// 2. 만들어진 Cookie가 사용될 경로 (url)
+			// 2. 만들어진 Cookie 사용될 경로(url)
 			cookie.setPath("/"); // localhost 또는 현재 ip 이하 모든 주소
 			
 			// 3. Cookie가 유지되는 시간(수명) 설정
-			if(saveEmail == null) { // 체크가 안 되어 있을 때
-				cookie.setMaxAge(0); // 만들어지자마자 만료
-													   // == 기존에 쿠키가 있으면 덮어씌우고 없어짐
+			if(saveEmail == null) { // 체크 X
+				cookie.setMaxAge(0); // 만들어지자 마자 만료
+											 // == 기존에 쿠기가 있으면 덮어씌우고 없어짐
 				
-			} else { // 체크가 되어 있을 때
-					cookie.setMaxAge(60 * 60 * 24 * 30); // 초 단위
+			} else { // 체크 O
+				cookie.setMaxAge(60 * 60 * 24 * 30); // 30일 초 단위로 작성
 			}
 			
 			// 4. resp 객체에 추가해서 클라이언트에게 전달
@@ -106,19 +106,19 @@ public class MemberController {
 	}
 	
 	
-	/** 로그아웃
+	/** 로그 아웃
 	 * @param status
 	 * @return 
 	 */
 	@GetMapping("logout")
-	public String logOut(SessionStatus status) {
+	public String logout(SessionStatus status) {
 		
 		/* SessionStatus
 		 * - @SessionAttributes를 이용해 등록된 객체(값)의 상태를
 		 *   관리하는 객체
-		 *   
+		 * 
 		 * - SessionStatus.setComplete();
-		 *   -> 세션 상태 완료 == 없앰(만료)
+		 *  -> 세션 상태 완료 == 없앰(만료)
 		 */
 		status.setComplete();
 		
@@ -145,6 +145,7 @@ public class MemberController {
  * - Cookie는 HttpServletResponse를 이용해서 생성,
  *   클라이언트에게 전달(응답) 할 수 있다
  */
+
 
 
 
