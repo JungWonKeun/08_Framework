@@ -14,5 +14,6 @@ import lombok.ToString;
 public class Book {
 	private String title;
 	private String writer;
+	
 	private int price;
 }
