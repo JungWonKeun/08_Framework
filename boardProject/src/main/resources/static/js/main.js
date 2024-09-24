@@ -1,3 +1,7 @@
+function submitLoginForm() {
+  document.getElementById("loginForm").submit();
+}
+
 // 쿠키에 저장된 여러 값 중 key가 일치하는 value 반환하기
 function getCookie(key){
 
