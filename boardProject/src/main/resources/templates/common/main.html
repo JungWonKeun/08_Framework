@@ -8,8 +8,8 @@
   <!-- templates/common/common.html 조각으로 추가 -->
   <th:block th:replace="~{common/common}"></th:block>
 </head>
-
 <body>
+
   <main>
 
     <!-- common/header.html 을 조각으로 추가 -->
@@ -20,13 +20,14 @@
     <section class="content">
 
       <section class="content-1">
-        
-        <table border = "1" style="border-collapse: collapse;">
+
+        <table border="1" style="border-collapse: collapse;" 
+              class="list-table">
           <thead>
             <tr>
-              <th>회원번호</th>
+              <th>회원 번호</th>
               <th>이메일</th>
-              <th>탈퇴상태</th>
+              <th>탈퇴 상태</th>
               <th>로그인</th>
               <th>비밀번호 초기화</th>
               <th>상태 변경</th>
@@ -45,10 +46,6 @@
           </tbody>
 
         </table>
-
-        <!-- session에 loginMember 있으면 출력 -->
-        <th:block th:text="${session.loginMember}"></th:block>
-
 
       </section>
 
@@ -81,10 +78,9 @@
                 <button>로그인</button>
               </section>
             </fieldset>
-
-            <div class="center">
+            <!-- <div class="center">
               <a href="javascript:void(0)" onclick="submitLoginForm()"><span data-attr="Log">Log</span><span data-attr="in">in</span></a>
-            </div>
+            </div> -->
             <label>
               <!-- label 태그 : input 태그의 제목을 나타내는 태그  -->
               <input type="checkbox" name="saveEmail">
@@ -96,7 +92,6 @@
               <span> | </span>
               <a href="#">ID/PW 찾기</a>
             </article>
-            
   
           </form>
         </th:block>
@@ -132,15 +127,12 @@
           </article>
 
         </th:block>
-        
-        
-        
+
+
 
       </section>
-      
 
     </section>
-    
   </main>
 
 
@@ -148,7 +140,8 @@
   <th:block th:replace="~{common/footer}"></th:block>
 
 
-  <script src="/js/main.js"></script> 
+  <script src="/js/main.js"></script>
+
 
 </body>
 </html>

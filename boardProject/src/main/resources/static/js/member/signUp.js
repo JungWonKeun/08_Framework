@@ -364,13 +364,13 @@ sendAuthKeyBtn.addEventListener("click", () => {
 
   // 2) 비동기로 서버에서 작성된 이메일로 인증코드 발송(AJAX)
   fetch("/email/sendAuthKey", {
-  method : "POST",
-  headers: {"Content-Type" : "application/json"},
-  body : memberEmail.value
+    method : "POST",
+    headers: {"Content-Type" : "application/json"},
+    body : memberEmail.value
 
-  // POST 방식으로 
-  // /email/sendAuthKey 요청을 처리하는 컨트롤러에
-  // 입력된 이메일을 body에 담아서 제출
+    // POST 방식으로 
+    // /email/sendAuthKey 요청을 처리하는 컨트롤러에
+    // 입력된 이메일을 body에 담아서 제출
 })
 .then(response => {
   if(response.ok) return response.text();
