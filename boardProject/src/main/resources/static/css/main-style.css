@@ -460,7 +460,6 @@ label[for="headerMenuToggle"]:hover{
 }
 a {
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 30px;
 }
 a span {

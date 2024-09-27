@@ -209,7 +209,12 @@ const selectMemberList = () => {
 
 }
 
+
+
+
 /* 페이지 로딩(렌더링) 끝난 후 수행 */ 
 document.addEventListener("DOMContentLoaded", () => {
   selectMemberList();
 });
+
+
