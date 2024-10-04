@@ -24,7 +24,6 @@ pageNoList?.forEach( (item, index) => {
       return;
     } 
 
-
     const pathname = location.pathname; // 현재 게시판 조회 요청 주소
 
     // 클릭된 버튼이 <<, <, >, >> 인 경우
@@ -53,3 +52,21 @@ pageNoList?.forEach( (item, index) => {
   });
 
 })
+
+
+// ---------------------------
+
+/* 글쓰기 버튼 클릭 시 */
+const insertBtn = document.querySelector("#insertBtn");
+
+insertBtn?.addEventListener("click", () =>{
+
+  // 현재 주소 : /board/{boardCode}
+  // 요청 주소 : /editBoard/{boardCode}/insert
+
+  const boardCode = location.pathname.split("/")[2];
+
+  location.href = `/editBoard/${boardCode}/insert`;
+});
+
+
