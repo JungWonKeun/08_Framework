@@ -3,7 +3,7 @@
 	display: flex;
 	min-height: 85px;
 	justify-content: center;
-	
+
 	margin: 30px 0;
 }
 
@@ -27,6 +27,8 @@
 #commentList{
 	padding: 0;
 	list-style: none;
+	margin-left : 20px;
+
 }
 
 .comment-writer {
