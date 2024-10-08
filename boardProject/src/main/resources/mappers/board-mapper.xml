@@ -40,19 +40,18 @@
 		property="imageList"
 		select="selectImageList"
 		column="BOARD_NO"
-		javaType = "java.util.ArrayList"
+		javaType="java.util.ArrayList"
 		ofType="BoardImg"
 	/>
-  
-  <collection 
-  		property="commentList" 
-  		select="selectCommentList"
-  		column="BOARD_NO"
-  		javaType = "java.util.ArrayList"
-  		ofType="Comment"
-  />
-  
-  
+	
+	<collection 
+		property="commentList"
+		select="selectCommentList"
+		column="BOARD_NO"
+		javaType="java.util.ArrayList"
+		ofType="Comment"
+	/>
+	
   </resultMap>
   
   
@@ -132,10 +131,10 @@
   
   
   <!-- 게시글 상세 조회 -->
-  <!-- 조회 결과를 board_rm에 지정된 Type == Board에 저장하고 
-  	   + collection 태그를 수행해서 
-  	     selectImageList 조회 후 Board.imageList 필드에 저장
-   -->
+  <!-- 조회 결과를 board_rm에 지정된 Type == Board에 저장하고
+       + collection 태그를 수행해서 
+       selectImageList 조회 후 Board.imageList 필드에 저장
+   -->  
   <select id="selectDetail" resultMap="board_rm">
   	SELECT 
 		BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
@@ -155,7 +154,14 @@
 		(SELECT IMG_PATH || IMG_RENAME
 		 FROM BOARD_IMG I
 		 WHERE I.BOARD_NO = #{boardNo}
-		 AND IMG_ORDER = 0) AS THUMBNAIL
+		 AND IMG_ORDER = 0) AS THUMBNAIL,
+		 
+		 (SELECT COUNT(*) 
+		  FROM "BOARD_LIKE"
+		  WHERE BOARD_NO  = #{boardNo}
+		  AND   MEMBER_NO = #{memberNo}) AS LIKE_CHECK
+		 
+		 
 		
 	FROM "BOARD" B
 	JOIN "MEMBER" M ON (B.MEMBER_NO = M.MEMBER_NO)
@@ -178,19 +184,63 @@
   <select id="selectCommentList" resultType="Comment">
   	SELECT LEVEL, C.* FROM
 		(SELECT COMMENT_NO, COMMENT_CONTENT,
-	    	TO_CHAR(COMMENT_WRITE_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') COMMENT_WRITE_DATE,
+		    TO_CHAR(COMMENT_WRITE_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') COMMENT_WRITE_DATE,
 		    BOARD_NO, MEMBER_NO, MEMBER_NICKNAME, PROFILE_IMG, PARENT_COMMENT_NO, COMMENT_DEL_FL
 		FROM "COMMENT"
 		JOIN MEMBER USING(MEMBER_NO)
 		WHERE BOARD_NO = #{boardNo}) C
 	WHERE COMMENT_DEL_FL = 'N'
 	OR 0 != (SELECT COUNT(*) FROM "COMMENT" SUB
-				WHERE SUB.PARENT_COMMENT_NO = C.COMMENT_NO
-				AND COMMENT_DEL_FL = 'N')
+					WHERE SUB.PARENT_COMMENT_NO = C.COMMENT_NO
+					AND COMMENT_DEL_FL = 'N')
 	START WITH PARENT_COMMENT_NO IS NULL
 	CONNECT BY PRIOR COMMENT_NO = PARENT_COMMENT_NO
 	ORDER SIBLINGS BY COMMENT_NO
   </select>
+  
+  
+  <!-- 조회 수 1 증가 -->
+  <update id="updateReadCount">
+  	UPDATE "BOARD"
+  	SET
+  		READ_COUNT = READ_COUNT + 1
+  	WHERE BOARD_NO = #{boardNo}
+  </update>
+  
+  
+  
+  <!-- 좋아요 여부 검사 -->
+  <select id="checkBoardLike" resultType="_int">
+  	SELECT COUNT(*) 
+  	FROM "BOARD_LIKE"
+  	WHERE MEMBER_NO = #{memberNo}
+  	AND   BOARD_NO  = #{boardNo}
+  </select>
+  
+  
+  <!-- 좋아요 테이블 INSERT -->
+  <insert id="insertBoardLike">
+  	INSERT INTO "BOARD_LIKE" (MEMBER_NO, BOARD_NO)
+  	VALUES(#{memberNo}, #{boardNo})
+  </insert>
+  
+  <!-- 좋아요 테이블 DELETE -->
+  <delete id="deleteBoardLike">
+  	DELETE FROM "BOARD_LIKE"
+	WHERE MEMBER_NO = #{memberNo}
+  	AND   BOARD_NO  = #{boardNo}
+  </delete>
+  
+  
+  <!-- 좋아요 개수 조회 -->
+  <select id="getLikeCount" resultType="_int">
+  	SELECT COUNT(*) 
+  	FROM "BOARD_LIKE"
+  	WHERE BOARD_NO = #{boardNo}
+  </select>
+  
+  
+  
   
   
   
