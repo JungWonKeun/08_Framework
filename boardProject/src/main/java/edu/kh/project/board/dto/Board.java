@@ -31,19 +31,19 @@ public class Board {
 	private int 	 readCount;
 	private String boardDelFl;
 	private int 	 memberNo;
-	private int 	 boardCode;
+	private int	   boardCode;
 	
 	// MEMBER 테이블 JOIN 컬럼
 	private String memberNickname;
 	
-	// 목록 조회 시 댓글/좋아요 수 상관 커리
+	// 목록 조회 시 댓글/좋아요 수 상관 쿼리 결과
 	private int		 commentCount;
 	private int		 likeCount;
 	
-	// ----------------------------
+	//------------------------------
 	// (추가 작성 예정)
 	
-	private String thumbnail;  // 썸네일 이미지
+	private String thumbnail; // 썸네일 이미지
 	private String profileImg; // 작성자 프로필 이미지
 	
 	// 특정 게시글의 이미지 목록을 저장할 필드
@@ -52,9 +52,8 @@ public class Board {
 	// 특정 게시글의 댓글 목록을 저장할 필드
 	private List<Comment> commentList;
 	
-	// 좋아요 체크 여부를 저장할 필드 (1 == 누른 적 있음)
+	// 좋아요 체크 여부를 저장할 필드(1 == 누른적 있음)
 	private int likeCheck;
 	
-	
+	 
 }
-

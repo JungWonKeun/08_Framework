@@ -99,20 +99,20 @@ public class BoardController {
 		
 		// 1) SQL 수행에 필요한 파라미터들 Map으로 묶기
 		Map<String, Integer> map = new HashMap<>();
-			map.put("boardCode", boardCode);
-			map.put("boardNo", boardNo);
-
-			/* 로그인이 되어있는 경우 memberNo를 map에 추가하는 코드 */
-			if(loginMember != null) {
-				map.put("memberNo", loginMember.getMemberNo());
-			}
-			
+		map.put("boardCode", boardCode);
+		map.put("boardNo", boardNo);
 		
-			
+		/* 로그인이 되어있는 경우 memberNo를 map에 추가 */
+		if(loginMember != null) {
+			map.put("memberNo", loginMember.getMemberNo());
+		}
+		
+		
+		
 		// 2) 서비스 호출 후 결과 반환 받기
 		Board board = service.selectDetail(map);
 		
-		/* 게시글 상세조회 결과가 없을 경우 */
+		/* 게시글 상세조회 결과가 없을 경우*/
 		if(board == null) {
 			ra.addFlashAttribute("message", "게시글이 존재하지 않습니다");
 			return "redirect:/board/" + boardCode;
@@ -126,16 +126,16 @@ public class BoardController {
 				|| loginMember.getMemberNo() != board.getMemberNo()) {
 			
 			// 1. 요청에 담겨있는 모든 쿠키 얻어오기
-			Cookie[] cookies = null; 
+			Cookie[] cookies = null;
 			Cookie c = null; 
 			
 			if(req.getCookies() != null) {
 				
-			cookies = req.getCookies();
+				cookies = req.getCookies();
 			
 				for(Cookie temp : cookies) {
 					// Cookie는 Map형식(name=value)
-				
+					
 					// 클라이언트로 부터 전달 받은 쿠키에
 					// "readBoardNo"라는 key(name)가 존재하는 경우
 					// == 기존에 읽은 게시글 번호를 저장한 쿠키가 있는 경우
@@ -145,6 +145,7 @@ public class BoardController {
 					}
 				}
 			}
+			
 			
 			int result = 0; // service 호출 결과 저장
 			
