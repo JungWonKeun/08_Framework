@@ -578,10 +578,16 @@ a:hover span:nth-child(2):after {
   color: white;
 }
 
-.list-table button:not(:disabled):hover {
+.list-table button:not(:disable d):hover {
   background-color: black;
 }
 
 .list-table button:disabled{
   background-color: grey;
 }
+
+/* 현재 보고있는 게시판 */
+.current-board{ 
+  background-color: var(--main-color); 
+  color: white;
+} 

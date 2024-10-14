@@ -1,28 +1,32 @@
-<header>
-  <section>
-    <a href="/">
-      <img src="/images/logo.png" alt="메인 로고" id="homeLogo">
-    </a>
-  </section>
+<link rel="stylesheet" href="../static/css/header.css">
+<header class="header">
+  <div class="top-row">
+      <!-- 로그인과 검색창을 같은 div 내에서 수직으로 배치 -->
+      <div class="login-search-wrapper">
+        <div class="login">
+          <button>로그인</button>
+        </div>
+  
+        <div class="search">
+          <input type="text" placeholder="검색" />
+        </div>
+      </div>
+    </div>
 
-  <section class="nav">
-    <a href="#">카테고리1</a>
-    <a href="#">카테고리2</a>
-    <a href="#">카테고리3</a>
-    <a href="#">카테고리4</a>
-  </section>
+  <div class="bottom-row">
+    <div class="logo">
+      <img src="#" alt="로고" />
+    </div>
 
-  <section class="login">
-    <a href="#">로그인</a>
-  </section>
-
-
-  <section class="search">
-    <input type="text" placeholder="검색">
-    <button>검색</button>
-  </section>
-
- 
-
+    <nav class="categories">
+      <a href="#"><i class="fa-solid fa-person-running">액티비티</i></a>
+      <a href="#"> <i class="fa-solid fa-star">문화/여가</i></a>
+      <a href="#"><i class="fa-solid fa-book">자기개발</i></a>
+      <a href="#"><i class="fa-solid fa-heart">연애</i></a>
+    </nav>
+  </div>
+  
+  <!-- 폰트어썸 주소 -->
+  <script src="https://kit.fontawesome.com/5eb8a8a2db.js" crossorigin="anonymous"></script>
 
 </header>

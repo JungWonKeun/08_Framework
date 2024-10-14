@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-row {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.login-search-wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+}
+
+.search {
+  margin-top: 50px; /* 로그인 버튼과 검색창 사이 간격 */
+  border: 1px solid black;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: center;
+  width: 100%;
+  gap: 20px; /* 로고와 카테고리 사이의 여백 */
+}
+
+.logo {
+  margin-left: 20px;
+  width: 100px; /* 로고 크기 조정 */
+  height: 100px;
+}
+
+.categories {
+  display: flex;
+  gap: 30px; /* 카테고리 사이 간격 조정 */
+}
+
+.categories a {
+  display: block;
+  background-color: rgb(204, 204, 204);
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.login button {
+  font-size: 14px;
+  padding: 5px 10px;
+}
