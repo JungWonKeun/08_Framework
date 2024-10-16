@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title th:text="#{app.name}">messages.properties 값 출력</title>
+  <title>Daemoim - Main</title>
 
-  <link rel="stylesheet" href="/daemoim/">
-  
-  <!-- templates/common/common.html 조각으로 추가 -->
+  <!-- 메인 스타일 시트 -->
+  <link rel="stylesheet" href="/css/main-style.css">
   <th:block th:replace="~{common/common}"></th:block>
+
+  <script src="https://kit.fontawesome.com/5eb8a8a2db.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+  <!-- 헤더 포함 -->
+  
+
+  <!-- 메인 컨텐츠 -->
   <main class="main">
-
-    <!-- common/header.html 을 조각으로 추가 -->
-    <th:block th:replace="~{common/header}"></th:block>
-
+    <th:block th:replace="common/header :: header"></th:block>
+    
     <section class="login-section">
       <form action="/signin">
         <fieldset>
@@ -24,29 +27,26 @@
             <button>로그인</button>
             <hr>
             <article>
-              <a href="#">아이디 찾기</a>
-              <span> | </span>
-              <a href="#">비밀번호 찾기</a>
-              <span> | </span>
+              <a href="#">아이디 / 비밀번호 찾기</a> | 
               <a href="#">회원가입</a>
             </article>
           </div>
         </fieldset>
       </form>
     </section>
-
+<!-- 
     <section class="popup-section">
       <div class="popup-overlay" id="popupOverlay"></div>
-      <!-- 팝업창  매번 x 눌러야해서 일단 주석처리-->
-      <!-- <div class="popup" id="popup">
+       팝업창  매번 x 눌러야해서 일단 주석처리
+      <div class="popup" id="popup">
         <button class="close-btn" id="closePopup">X</button>
         <h2>공지사항</h2>
         <p>팝업창 내용</p>
         <img src="../static/images/logo.png" alt="팝업 이미지" style="width:100%;">
-      </div> -->
-    </section>
+      </div>
+    </section> -->
 
-    <!-- 로그인 전 추천 모임 / 로그인 후 본인 모임 추후 수정예정 -->
+    <!-- 추천 모임 섹션 -->
     <section class="group-section">
       <div class="group-box">
         <section class="groupMainImage">
@@ -56,10 +56,13 @@
           <a href="#">모임 이름</a>
           <h1>모임 소개</h1>
           <br>
-          <a href="#">모임 카테고리</a> <a href="#">위치</a><span> | </span>  <a href="#">인원수</a>
+          <a href="#">모임 카테고리</a> | 
+          <a href="#">위치</a> | 
+          <a href="#">인원수</a>
         </section>
       </div>
 
+      <!-- 추가적인 모임 박스 -->
       <div class="group-box">
         <section class="groupMainImage">
           <img src="#" alt="모임 대표 사진">
@@ -68,73 +71,24 @@
           <a href="#">모임 이름</a>
           <h1>모임 소개</h1>
           <br>
-          <a href="#">모임 카테고리</a> <a href="#">위치</a><span> | </span>  <a href="#">인원수</a>
+          <a href="#">모임 카테고리</a> | 
+          <a href="#">위치</a> | 
+          <a href="#">인원수</a>
         </section>
       </div>
-
-      <div class="group-box">
-        <section class="groupMainImage">
-          <img src="#" alt="모임 대표 사진">
-        </section>
-        <section class="group-info">
-          <a href="#">모임 이름</a>
-          <h1>모임 소개</h1>
-          <br>
-          <a href="#">모임 카테고리</a> <a href="#">위치</a><span> | </span>  <a href="#">인원수</a>
-        </section>
-      </div>
-
-      <div class="group-box">
-        <section class="groupMainImage">
-          <img src="#" alt="모임 대표 사진">
-        </section>
-        <section class="group-info">
-          <a href="#">모임 이름</a>
-          <h1>모임 소개</h1>
-          <br>
-          <a href="#">모임 카테고리</a> <a href="#">위치</a><span> | </span>  <a href="#">인원수</a>
-        </section>
-      </div>
-
-      <div class="group-box">
-        <section class="groupMainImage">
-          <img src="#" alt="모임 대표 사진">
-        </section>
-        <section class="group-info">
-          <a href="#">모임 이름</a>
-          <h1>모임 소개</h1>
-          <br>
-          <a href="#">모임 카테고리</a> <a href="#">위치</a><span> | </span>  <a href="#">인원수</a>
-        </section>
-      </div>
-
-      <div class="group-box">
-        <section class="groupMainImage">
-          <img src="#" alt="모임 대표 사진">
-        </section>
-        <section class="group-info">
-          <a href="#">모임 이름</a>
-          <h1>모임 소개</h1>
-          <br>
-          <a href="#">모임 카테고리</a> <a href="#">위치</a><span> | </span>  <a href="#">인원수</a>
-        </section>
-      </div>
-
-      
     </section>
 
+    <!-- 위로가기 버튼 -->
     <section class="scroll-top">
       <button>^</button>
     </section>
-
   </main>
-  
-  <!-- common/footer.html 추가 -->
-  <th:block th:replace="~{common/footer}"></th:block>
 
+  <!-- 푸터 포함 -->
+  <th:block th:replace="common/footer :: footer"></th:block>
 
-
-  <script src="../static/js/main.js"></script>
+  <!-- 스크립트 파일 -->
+  <script src="/static/js/main.js"></script>
 
 </body>
 </html>
