@@ -18,6 +18,24 @@ public class CategoryController {
 	public String activity() {
 		return "category/activity";
 	}
+	
+
+	@GetMapping("culture")
+	public String culture() {
+		return "category/culture";
+	}
+	
+
+	@GetMapping("develop")
+	public String develop() {
+		return "category/develop";
+	}
+	
+
+	@GetMapping("dating")
+	public String dating() {
+		return "category/dating";
+	}
 
 	
 }

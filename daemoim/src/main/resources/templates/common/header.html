@@ -1,5 +1,4 @@
 <header class="header">
-  <!-- 로고와 로그인 버튼 -->
   <div class="top-row">
     <!-- 로고 -->
     <div class="logo-wrapper">
@@ -10,11 +9,12 @@
 
     <!-- 로그인 버튼 -->
     <div class="login-wrapper">
-      <button id="login-btn">로그인</button>
+      <button id="login-btn">
+        <a href="/signin">로그인</a>
+      </button>
     </div>
   </div>
 
-  <!-- 카테고리와 검색창 -->
   <div class="middle-row">
     <!-- 카테고리 메뉴 -->
     <nav class="categories">
@@ -25,9 +25,8 @@
     </nav>
 
     <!-- 검색창 -->
-    <a href= "/search/search" class="search-btn">
-      <input type="text" placeholder="검색" />
-      <button>검색</button>
-    </a>
+    <form action="/search/search" method="get" class="search-btn">
+      <button type="submit">검색</button>
+    </form>
   </div>
 </header>
