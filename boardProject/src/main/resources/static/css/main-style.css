@@ -705,7 +705,7 @@ header>section:nth-child(3) {
   -webkit-box-orient: vertical;
 }
 
-.notidication-delete{
+.notification-delete{
   position: absolute;
   top: -5px;
   right: 2px;
@@ -715,7 +715,7 @@ header>section:nth-child(3) {
   font-weight: bold;
 }
 
-.notidication-delete:hover{
+.notification-delete:hover{
   color: red;
 }
 

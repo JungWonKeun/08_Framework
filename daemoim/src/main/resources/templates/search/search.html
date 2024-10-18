@@ -21,18 +21,16 @@
       <form action="#" method="get" id="search">
         <input type="text" name="query" id="searchQuery" placeholder="검색어 입력">
         
-        <div class="filter-container">
-          <div class="filter-icon" onclick="toggleDropdown()">
-            <i class="fas fa-filter"></i>
-          </div>
+        <!-- 필터 -->
+        <div class="filter-icon" onclick="toggleDropdown()">
+          <i class="fas fa-filter"></i>
+        </div>
         
-          <!-- 필터 항목 -->
-          <div class="dropdown" id="dropdownMenu">
-            <a href="#">액티비티</a>
-            <a href="#">문화/여가</a>
-            <a href="#">자기계발</a>
-            <a href="#">연애</a>
-          </div>
+        <div class="dropdown" id="dropdownMenu" style="display: none;">
+          <a href="#">액티비티</a>
+          <a href="#">문화/여가</a>
+          <a href="#">자기계발</a>
+          <a href="#">연애</a>
         </div>
         <button type="submit">검색</button>
       </form>
@@ -116,7 +114,7 @@
     <th:block th:replace="~{common/footer}"></th:block>
 
   <script src="../static/js/main.js"></script>
-  <script src="../static/js/search.search.js"></script>
+  <script src="../static/js/search/search.js"></script>
 
 </body>
 </html>

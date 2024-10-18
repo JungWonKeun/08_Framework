@@ -26,20 +26,44 @@
 		   	#{memberNo},
 		   	#{boardNo},
 		   	
-		   	<!-- 부모 댓글  -->
+		   	<!-- 부모 댓글 -->
 		   	<if test="parentCommentNo == 0">
-		   		NULL
+				NULL		   	
 		   	</if>
 		   	
 		   	<!-- 자식 댓글 -->
-		   	<if test="parentCommentNo != 0" >
+		   	<if test="parentCommentNo != 0">
 			   	#{parentCommentNo}
 		   	</if>
 		   	
-		   	
 		   	)
-	
 	</insert>
+
+
+
+	<!-- 댓글 삭제(상태 값 변경) -->
+	<update id="commentDelete">
+		UPDATE "COMMENT"
+		SET
+			COMMENT_DEL_FL = 'Y'
+		WHERE
+			COMMENT_NO = #{commentNo}
+		AND
+			MEMBER_NO  = #{memberNo}
+	</update>
+	
+	
+	<!-- 댓글 수정 -->
+	<update id="commentUpdate">
+		UPDATE "COMMENT"
+		SET
+			COMMENT_CONTENT = #{commentContent}
+		WHERE 
+			COMMENT_NO = #{commentNo}
+		AND
+			MEMBER_NO  = #{memberNo}
+	</update>
+
 
 
 
