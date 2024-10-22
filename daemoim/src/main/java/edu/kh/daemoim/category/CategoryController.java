@@ -16,25 +16,25 @@ public class CategoryController {
 	
 	@GetMapping("activity")
 	public String activity() {
-		return "category/activity";
+		return "activity";
 	}
 	
 
 	@GetMapping("culture")
 	public String culture() {
-		return "category/culture";
+		return "culture";
 	}
 	
 
 	@GetMapping("develop")
 	public String develop() {
-		return "category/develop";
+		return "develop";
 	}
 	
 
 	@GetMapping("dating")
 	public String dating() {
-		return "category/dating";
+		return "dating";
 	}
 
 	
