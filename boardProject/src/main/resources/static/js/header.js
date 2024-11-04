@@ -112,6 +112,7 @@ const sendNotification = (type, url, pkNo, content) => {
   const notification = {
     "notificationType": type,
     "notificationUrl": url,
+
     "pkNo": pkNo,
     "notificationContent": content
   }
@@ -208,6 +209,7 @@ const selectNotificationList = () => {
       notiDelete.className = 'notification-delete';
       notiDelete.innerHTML = '&times;';
 
+      
 
       /* 삭제 버튼 클릭 시 비동기로 해당 알림 지움 */
       notiDelete.addEventListener("click", e => {
